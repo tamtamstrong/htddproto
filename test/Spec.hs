@@ -1,15 +1,16 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
+import Lib (someFunc)
 
 main :: IO ()
 main = hspec $ do
-  describe "Prelude.head" $ do
+  describe "Lib.someFunc" $ do
     it "returns the first element of a list" $ do
-      head [23 ..] `shouldBe` (23 :: Int)
+      someFunc [23 ..] `shouldBe` (23 :: Int)
 
     it "returns the first element of an *arbitrary* list" $
-      property $ \x xs -> head (x:xs) == (x :: Int)
+      property $ \x xs -> someFunc (x:xs) == (x :: Int)
 
     it "throws an exception if used with an empty list" $ do
-      evaluate (head []) `shouldThrow` anyException
+      evaluate (someFunc []) `shouldThrow` anyException
