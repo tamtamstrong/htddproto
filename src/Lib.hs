@@ -1,6 +1,6 @@
 module Lib
-    ( someFunc
+    ( palindrome
     ) where
 
-someFunc :: [a] -> a
-someFunc = head
+palindrome :: String -> Bool
+palindrome _ = True

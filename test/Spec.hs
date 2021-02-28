@@ -1,16 +1,30 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
-import Lib (someFunc)
+import Lib (palindrome)
 
 main :: IO ()
 main = hspec $ do
-  describe "Lib.someFunc" $ do
-    it "returns the first element of a list" $ do
-      someFunc [23 ..] `shouldBe` (23 :: Int)
+  -- inspiration from https://www.ibm.com/cloud/architecture/content/course/test-driven-development/tdd-palindrome-kata?task=1
+  describe "Lib.palindrome" $ do
+    it "returns True for mom" $ do
+      pending
 
-    it "returns the first element of an *arbitrary* list" $
-      property $ \x xs -> someFunc (x:xs) == (x :: Int)
+    it "returns False for dude" $ do
+      pending
 
-    it "throws an exception if used with an empty list" $ do
-      evaluate (someFunc []) `shouldThrow` anyException
+    it "returns True for mom mom" $ do
+      pending
+
+    it "returns False for dad mom" $ do
+      pending
+
+    it "returns True for whitespace" $ do
+      pending
+
+    it "returns error for empty string" $ do
+      pending
+
+    it "returns error for not a string" $ do
+      pending
+
