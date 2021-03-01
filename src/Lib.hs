@@ -2,5 +2,7 @@ module Lib
     ( palindrome
     ) where
 
+import Control.Exception
+
 palindrome :: String -> Bool
-palindrome _ = True
+palindrome x = x == reverse x
